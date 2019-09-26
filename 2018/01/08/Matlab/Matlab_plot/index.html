@@ -2,7 +2,7 @@
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
   
     <title>Matlab绘图常见命令 | 薛老板的猫</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -40,11 +40,11 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
   <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+    <header>
       
 <div>
 		
@@ -117,7 +117,6 @@
 		
 		<p>在一些科研绘图方面，大多数人喜欢使用Origin软件作图,但是作为一名Matlab爱好者，对于Origin这种点来点去的操作，很是苦恼。因此我一直使用Matlab进行科研绘图。为了将主要的精力focus在physics而不是coding,所以整理了一份matlab绘图常见命令合集。这篇文章当然也会定期更新，欢迎大家前来收藏。如果有更好的意见，希望大家可以留言或者Email我。</p>
 <a id="more"></a>
-
 <h3 id="1-Matlab线条属性："><a href="#1-Matlab线条属性：" class="headerlink" title="1.  Matlab线条属性："></a>1.  Matlab线条属性：</h3><ul>
 <li><p><strong>LineStyle：线形</strong></p>
 <p> <code>- 实线</code><br> <code>--  虚线</code><br><code>：点线</code><br><code>-. 点划线</code></p>
@@ -135,46 +134,26 @@
 <p><code>plot(x,y,&#39;-.or&#39;,&#39;MarkerFaceColor&#39;,&#39;g&#39;)</code></p>
 <p>其中线形为点横线，数据点形状为圆圈，线条和数据点边缘的颜色都是红色，数据点的填充颜色为绿色。</p>
 <h3 id="2-字体设置"><a href="#2-字体设置" class="headerlink" title="2. 字体设置"></a>2. 字体设置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FontName &apos;Helvetica&apos; (default) | &apos;Cambria&apos;</span><br><span class="line">FontSize 10</span><br><span class="line">FontWeight &apos;normal&apos; (default) | &apos;bold&apos;</span><br></pre></td></tr></table></figure>
-
-
 <h3 id="3-图形标记"><a href="#3-图形标记" class="headerlink" title="3. 图形标记"></a>3. 图形标记</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title(‘加图形标题’); </span><br><span class="line">xlabel(&apos;加X轴标记&apos;);    </span><br><span class="line">ylabel(&apos;加Y轴标记&apos;);      </span><br><span class="line">text(X,Y,&apos;添加文本&apos;);</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Position % 尺寸和位置</span><br><span class="line">[0.1300 0.1100 0.7750 0.8150] (default) | 四元素矢量</span><br><span class="line">[left bottom width height]</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="4-坐标轴属性"><a href="#4-坐标轴属性" class="headerlink" title="4. 坐标轴属性"></a>4. 坐标轴属性</h3><p>从R2014b之后，可以通过点注释来访问和设置属性，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax = gca;</span><br><span class="line">c = ax.Color;</span><br><span class="line">ax.Color = &apos;blue&apos;;</span><br></pre></td></tr></table></figure>
-
-<p>R2014b版本之前都是用<code>get</code>和<code>set</code>设置坐标轴属性，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set(gca,&apos;XLim&apos;,[0 1.5]); %X轴的数据显示范围</span><br><span class="line">set(gca,&apos;XTick&apos;,[0:0.1:1.5]); %设置要显示坐标刻度</span><br><span class="line">set(gca,&apos;XTickLabel&apos;,[0:0.1:1.5]); %给坐标加标签</span><br></pre></td></tr></table></figure>
-
+<h3 id="4-坐标轴属性"><a href="#4-坐标轴属性" class="headerlink" title="4. 坐标轴属性"></a>4. 坐标轴属性</h3><p>从R2014b之后，可以通过点注释来访问和设置属性，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ax = gca;</span><br><span class="line">c = ax.Color;</span><br><span class="line">ax.Color = &apos;blue&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>R2014b版本之前都是用<code>get</code>和<code>set</code>设置坐标轴属性，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set(gca,&apos;XLim&apos;,[0 1.5]); %X轴的数据显示范围</span><br><span class="line">set(gca,&apos;XTick&apos;,[0:0.1:1.5]); %设置要显示坐标刻度</span><br><span class="line">set(gca,&apos;XTickLabel&apos;,[0:0.1:1.5]); %给坐标加标签</span><br></pre></td></tr></table></figure></p>
 <p><strong>刻度值和标签</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XLim, YLim, ZLim % 坐标轴的范围</span><br><span class="line">Example: ax.XLim = [0 10]</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XTick, YTick, ZTick % 刻度位置</span><br><span class="line">Example: ax.XTick = [2 4 6 8 10]</span><br><span class="line">Example: ax.YTick = 0:10:100</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">XTickLabel, YTickLabel, ZTickLabel % 刻度标签</span><br><span class="line">Example: ax.XTickLabel = &#123;&apos;Jan&apos;,&apos;Feb&apos;,&apos;Mar&apos;,&apos;Apr&apos;&#125;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">TickDir % 刻度的方向</span><br><span class="line">&apos;in&apos; (default) | &apos;out&apos; | &apos;both&apos;</span><br><span class="line">Example: ax.TickDir = &apos;out&apos;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Xdir,Ydir,Zdir % 坐标轴方向</span><br><span class="line">normal %正常</span><br><span class="line">reverse %反向</span><br><span class="line">Example: ax.XDir = &apos;normal&apos;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Xgrid,Ygrid,Zgrid % 坐标轴的网格</span><br><span class="line">on/off </span><br><span class="line">Example: ax.XGrid = &apos;on&apos;**Example: **`ax.XGrid = &apos;on&apos;`</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">XColor, YColor, ZColor % 坐标轴的颜色</span><br><span class="line">Example: ax.XColor = [1 1 0]</span><br><span class="line">Example: ax.YColor = &apos;y&apos;</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">axis函数的调用格式为：</span><br><span class="line">axis([xmin xmax ymin ymax zmin zmax])</span><br><span class="line">axis函数功能丰富，常用的格式还有：</span><br><span class="line">axis equal：纵、横坐标轴采用等长刻度。</span><br><span class="line">axis square：产生正方形坐标系(缺省为矩形)。</span><br><span class="line">axis auto：使用缺省设置。</span><br><span class="line">axis off：取消坐标轴。</span><br><span class="line">axis on：显示坐标轴。</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grid on/off % 是否加网格线</span><br><span class="line">box on/off % 是否加边框</span><br></pre></td></tr></table></figure>
-
 <h3 id="5-数据处理"><a href="#5-数据处理" class="headerlink" title="5. 数据处理"></a>5. 数据处理</h3><ul>
 <li><strong>smooth 平滑</strong></li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">使用loess和rloess方法平滑数据，窗宽为10%</span><br><span class="line">yy1 = smooth(x,y,0.1,&apos;loess&apos;);</span><br><span class="line">yy2 = smooth(x,y,0.1,&apos;rloess&apos;);</span><br></pre></td></tr></table></figure>
-
-<img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/18-1-4/91502261.png" width="700" alt="smooth" align="center">
-
-
+<p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/18-1-4/91502261.png" width="700" alt="smooth" align="center"></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -182,7 +161,8 @@
 <th>Description</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>‘moving’</td>
 <td>移动平均法（默认），低通滤波器，滤波系数为窗宽的倒数</td>
 </tr>
@@ -206,14 +186,15 @@
 <td>‘rloess’</td>
 <td>‘loess’方法的稳健形式，异常值赋予较小的权重</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <hr>
-<br> 
-
-<p>** 反馈与建议 **</p>
+<p><br> </p>
+<p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="mailto:&#121;&#x75;&#x6e;&#98;&#x69;&#x61;&#111;&#122;&#x68;&#97;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;" target="_blank" rel="noopener">&#121;&#x75;&#x6e;&#98;&#x69;&#x61;&#111;&#122;&#x68;&#97;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#58;&#121;&#117;&#x6e;&#98;&#x69;&#97;&#x6f;&#122;&#x68;&#x61;&#111;&#x40;&#104;&#x6f;&#116;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;">&#121;&#117;&#x6e;&#98;&#x69;&#97;&#x6f;&#122;&#x68;&#x61;&#111;&#x40;&#104;&#x6f;&#116;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#111;&#109;</a></li>
 </ul>
   
 	</div>
@@ -643,7 +624,7 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Tiny_search End -->
 
   </body>
 </html>

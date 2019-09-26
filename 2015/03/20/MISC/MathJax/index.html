@@ -2,7 +2,7 @@
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
   
     <title>MathJax插件在hexo中的应用 | 薛老板的猫</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -36,11 +36,11 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
   <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+    <header>
       
 <div>
 		
@@ -146,18 +146,18 @@
 </blockquote>
 <h3 id="行间公式"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式</h3><p>对于行间公式有帖子说可以采用<strong><a href="http://catx.me/2014/03/09/hexo-mathjax-plugin/" target="_blank" rel="noopener">Tag Block</a></strong>方式解决Markdown转义问题，不知为何总感觉使用<strong>Tag Block</strong>有点不方便。我亲自测试了一下行内公式方法依旧可用。比如：</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">\<span class="name">begin</span><span class="string">&#123;aligned&#125;</span></span> </span><br><span class="line">w&amp;=ax^2+bxy+cy^2<span class="tag">\<span class="name">\</span></span><span class="tag">\</span></span><br><span class="line"> &amp;=a(x+<span class="tag">\<span class="name">frac</span><span class="string">&#123;by&#125;</span><span class="string">&#123;2a&#125;</span></span>)^2+(c-<span class="tag">\<span class="name">dfrac</span><span class="string">&#123;(by)^2&#125;</span><span class="string">&#123;4a&#125;</span></span>)<span class="tag">\<span class="name">\</span></span><span class="tag">\</span></span><br><span class="line"> &amp;=<span class="tag">\<span class="name">frac</span><span class="string">&#123;1&#125;</span><span class="string">&#123;4a&#125;</span><span class="string">[4a^2(x+\frac&#123;by&#125;&#123;2a&#125;)^2+(4ac-b^2)y^2]</span></span></span><br><span class="line"><span class="tag">\<span class="name">end</span><span class="string">&#123;aligned&#125;</span></span></span><br></pre></td></tr></table></figure>
-
 <p>效果为</p>
 <blockquote>
-<p>$$\begin{aligned} w&amp;=ax^2+bxy+cy^2\<br> &amp;=a(x+\frac{by}{2a})^2+(c-\dfrac{(by)^2}{4a})\<br> &amp;=\frac{1}{4a}[4a^2(x+\frac{by}{2a})^2+(4ac-b^2)y^2] \end{aligned}$$</p>
-</blockquote>
+<script type="math/tex; mode=display">\begin{aligned} w&=ax^2+bxy+cy^2\\\
+ &=a(x+\frac{by}{2a})^2+(c-\dfrac{(by)^2}{4a})\\\
+ &=\frac{1}{4a}[4a^2(x+\frac{by}{2a})^2+(4ac-b^2)y^2] \end{aligned}</script></blockquote>
 <hr>
 <p> 暂时没有发现MathJax的其他问题，如果大家遇到类似的问题可以提出来，我会测试程序帮助大家解决问题的。</p>
 <hr>
-<p>** 反馈与建议 **</p>
+<p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="mailto:&#121;&#x75;&#x6e;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#97;&#111;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#121;&#x75;&#x6e;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#97;&#111;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x79;&#x75;&#110;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#64;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x75;&#110;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#64;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
 </ul>
   
 	</div>
@@ -587,7 +587,7 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Tiny_search End -->
 
   </body>
 </html>

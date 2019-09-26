@@ -2,7 +2,7 @@
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
   
     <title>好玩的LaTeX—shapepar | 薛老板的猫</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -42,11 +42,11 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
   <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+    <header>
       
 <div>
 		
@@ -119,14 +119,14 @@
 		
 		<p>好久没有更新博客了，打算在今年暑假认真学习一下TeX语言，顺便写一个<strong>好玩的</strong>$\LaTeX$专题，记录一下本人的笔记。作为<strong>好玩的LaTeX</strong>系列首篇，送给清新的男孩子们一个追妹攻略——<a href="http://www.ctan.org/pkg/shapepar/" target="_blank" rel="noopener">shapepar宏包</a>。</p>
 <a id="more"></a>
-
 <h2 id="shapepar的介绍"><a href="#shapepar的介绍" class="headerlink" title="shapepar的介绍"></a>shapepar的介绍</h2><p><a href="http://www.ctan.org/pkg/shapepar/" target="_blank" rel="noopener">shapepar宏包</a>是一个把段落排版为特定形状的宏包。官方定义如下：</p>
 <blockquote>
 <p>Shapepar is a macro to typeset paragraphs in specific shapes.</p>
 </blockquote>
 <p>shapepar宏包提供了一个较为简单的语法接口，并且预定义了一些形状，可以方便地排出好玩的图形。该宏包可以在LaTeX或Plain TeX下使用，对于LaTeX语法在导言区<code>\usepackage{shapepar}</code>方式调用，对于Plain语法在导言区<code>\input shapepar.sty</code>调用。</p>
 <p><code>\shapepar</code>用在段落的开头，由<strong>长度参数</strong>和<strong>形状选择参数</strong>两个可选参数组成，一般调用方式为:</p>
-<pre><code>\shapepar [&lt;scale_len&gt;]{&lt;shape_spec&gt;} Text </code></pre><p>看到这里肯定小伙子有点看不下去了，莫着急嘛~，好玩的在下面……</p>
+<pre><code>\shapepar [&lt;scale_len&gt;]{&lt;shape_spec&gt;} Text 
+</code></pre><p>看到这里肯定小伙子有点看不下去了，莫着急嘛~，好玩的在下面……</p>
 <hr>
 <h2 id="shapepar的使用"><a href="#shapepar的使用" class="headerlink" title="shapepar的使用"></a>shapepar的使用</h2><p>小伙子追女孩儿，文艺气质不够怎么办？LaTeX帮你轻松追到妹。哈哈~<br>假如妹子是那种喜欢夜空下的星星那种，这样的一份情书必然让她心动：<br><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/star.png" alt></p>
 <p>假如妹子是那种喜欢明月当空的，那么你可以来这样的一份告白：<br><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/moon.png" alt></p>
@@ -137,10 +137,10 @@
 <h2 id="shapepar的进阶"><a href="#shapepar的进阶" class="headerlink" title="shapepar的进阶"></a>shapepar的进阶</h2><p>shapepar的使用比较简单，但是仅仅上面的图形肯定是不够的，这时候就要考虑自定义设置图形啦。一般是使用<strong>Christian Gollwitzer</strong>写的<a href="http://www.ctan.org/tex-archive/graphics/transfig-shapepatch" target="_blank" rel="noopener">ShapePatch</a>或者<strong>Manuel Gutierrez Algaba</strong>写的<a href="http://web.mit.edu/texsrc/source/latex/shapepar/proshap.py" target="_blank" rel="noopener">proshap.py</a>来进行设计啦。ShapePatch需要借助xfig软件画图,比较方便上手。proshap制作的图细致一些，比较复杂，生成的图这个样子的：<br><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/proshap.png" alt="proshap设计的图"></p>
 <p>今天突然看到了shapepar宏包，花了一个小时学习了一下，效果确实很赞。最近可能比较忙，<strong>好玩的LaTeX系列</strong>假期会继续的，欢迎各位关注并分享转载！</p>
 <hr>
-<p>** 反馈与建议 **</p>
+<p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="mailto:&#121;&#x75;&#110;&#98;&#x69;&#97;&#111;&#x7a;&#x68;&#97;&#111;&#64;&#104;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#121;&#x75;&#110;&#98;&#x69;&#97;&#111;&#x7a;&#x68;&#97;&#111;&#64;&#104;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x79;&#x75;&#x6e;&#98;&#105;&#97;&#x6f;&#122;&#104;&#x61;&#111;&#x40;&#104;&#111;&#x74;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x75;&#x6e;&#98;&#105;&#97;&#x6f;&#122;&#104;&#x61;&#111;&#x40;&#104;&#111;&#x74;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#x6d;</a></li>
 </ul>
   
 	</div>
@@ -570,7 +570,7 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Tiny_search End -->
 
   </body>
 </html>

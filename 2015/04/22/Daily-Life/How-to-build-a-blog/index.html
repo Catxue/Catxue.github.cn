@@ -2,7 +2,7 @@
  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  <meta charset="UTF-8">
   
     <title>如何建立自己的博客 | 薛老板的猫</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
@@ -36,11 +36,11 @@
     <link rel="apple-touch-icon" href="/img/jacman.jpg">
     <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
-    <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 </html>
   <body>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+    <header>
       
 <div>
 		
@@ -111,9 +111,7 @@
 		
 		</div>
 		
-		<p>建立博客已经很长时间了，一直没有写一下建立博客的资料，或许也称之为<strong>“攻略”</strong>吧。写毕设论文写得头疼，特闲暇之余总结一下如何利用Hexo建立博客的资料，希望对读者有所启发。</p>
-<a id="more"></a>
-
+		<p>建立博客已经很长时间了，一直没有写一下建立博客的资料，或许也称之为<strong>“攻略”</strong>吧。写毕设论文写得头疼，特闲暇之余总结一下如何利用Hexo建立博客的资料，希望对读者有所启发。<br><a id="more"></a></p>
 <hr>
 <h2 id="什么是博客"><a href="#什么是博客" class="headerlink" title="什么是博客"></a>什么是博客</h2><p>什么是博客呢？<strong>Blog</strong>的English解释是Web Log，意指<strong>log on the web</strong>。我认为博客就是一个可以记录生活、抒发情感也可以分享学习知识、结交朋友的平台。当然对于单身男士们，博客是一个很好地提升自己逼格和把妹的平台，有博客就是这么任性！废话少说，接下来就来介绍如何在短期内很好地建立自己的博客。</p>
 <hr>
@@ -130,23 +128,34 @@
 </blockquote>
 <p>hexo出自台湾大学生<a href="http://zespia.tw/" target="_blank" rel="noopener">Tommy Chen</a>之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。当然有人也用Octopress搭建博客，那就还是看看<a href="http://zespia.tw/blog/2012/10/11/hexo-debut/" target="_blank" rel="noopener">Hexo 颯爽登場！</a>就知道两者的区别了。hexo需要了解什么呢？仅仅需要了解下面几条命令即可。</p>
 <p><strong>安装hexo</strong></p>
-<pre><code>npm install hexo-cli -g</code></pre><p><strong>初始化</strong></p>
-<pre><code>hexo init &lt;folder&gt;</code></pre><p><strong>安装npm插件</strong></p>
-<pre><code>npm install</code></pre><p><strong>安装hexo-deployer-git插件</strong>，此插件会在主目录下生成<code>.deploy_git</code>文件并强行按照<code>_config</code>中配置进行推送。如果不存在<code>.deploy_git</code>文件，可通过<code>git init</code>命令建立。</p>
-<pre><code>npm install hexo-deployer-git --save</code></pre><p>其中配置选项为：</p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p><strong>初始化</strong></p>
+<pre><code>hexo init &lt;folder&gt;
+</code></pre><p><strong>安装npm插件</strong></p>
+<pre><code>npm install
+</code></pre><p><strong>安装hexo-deployer-git插件</strong>，此插件会在主目录下生成<code>.deploy_git</code>文件并强行按照<code>_config</code>中配置进行推送。如果不存在<code>.deploy_git</code>文件，可通过<code>git init</code>命令建立。</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>其中配置选项为：</p>
 <pre><code>deploy:
   type: git
   repo: &lt;repository url&gt;
   branch: [branch]
-  message: [message]</code></pre><p><strong>克隆主题</strong>，在博客根目录下执行<code>clone</code>命令，例如</p>
-<pre><code>git clone https://github.com/wuchong/jacman.git themes/jacman</code></pre><p><strong>启用</strong><br>修改你的博客根目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为jacman。同时建议设置<code>stylus</code>属性中的<code>compress</code>值为true，会自动压缩 CSS 文件，hexo默认配置中不包含这一项，建议开启。如下。</p>
+  message: [message]
+</code></pre><p><strong>克隆主题</strong>，在博客根目录下执行<code>clone</code>命令，例如</p>
+<pre><code> git clone https://github.com/wuchong/jacman.git themes/jacman
+</code></pre><p><strong>启用</strong><br>修改你的博客根目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为jacman。同时建议设置<code>stylus</code>属性中的<code>compress</code>值为true，会自动压缩 CSS 文件，hexo默认配置中不包含这一项，建议开启。如下。</p>
 <pre><code>theme: jacman
 stylus:
-  compress: true</code></pre><p><strong>建立新文章</strong></p>
-<pre><code>hexo new_post &lt;title&gt;</code></pre><p><strong>生成博客文件</strong></p>
-<pre><code>hexo generate</code></pre><p><strong>上传服务器</strong></p>
-<pre><code>hexo server</code></pre><p><strong>清除文件</strong></p>
-<pre><code>hexo clean</code></pre><p>hexo常用的命令就这么几条，是不是很easy？ O(∩_∩)O~~</p>
+  compress: true
+</code></pre><p><strong>建立新文章</strong></p>
+<pre><code>hexo new_post &lt;title&gt;
+</code></pre><p><strong>生成博客文件</strong></p>
+<pre><code>hexo generate
+</code></pre><p><strong>上传服务器</strong></p>
+<pre><code>hexo server
+</code></pre><p><strong>清除文件</strong></p>
+<pre><code>hexo clean
+</code></pre><p>hexo常用的命令就这么几条，是不是很easy？ O(∩_∩)O~~</p>
 <hr>
 <h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p>Markdown是什么东东？请看下面：</p>
 <blockquote>
@@ -157,7 +166,7 @@ stylus:
 <ol>
 <li><a href="http://www.appinn.com/markdown/index.html" target="_blank" rel="noopener">Markdown 语法说明 (简体中文版)</a></li>
 <li><a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="noopener">作业部落</a></li>
-<li><a href="http://yuedu.baidu.com/ebook/7408817d5f0e7cd184253681?fr=aladdin&key=markdown" target="_blank" rel="noopener">Markdown</a></li>
+<li><a href="http://yuedu.baidu.com/ebook/7408817d5f0e7cd184253681?fr=aladdin&amp;key=markdown" target="_blank" rel="noopener">Markdown</a></li>
 </ol>
 <p>其实我是很推荐第三篇文档的电子书的，只是没有找到免费电子版的，考虑到不是所有的人都会花钱去看，就姑且放在最后了。在这里还是想吐槽一下那些觉得花几块钱买本书看都要BB半天的人，如果说你可以买得起iPad却看不起几本几十元的书，请自觉绕开，我们不是一个次元。</p>
 <hr>
@@ -172,10 +181,10 @@ stylus:
 <li><a href="http://www.cnblogs.com/tengj/tag/hexo/" target="_blank" rel="noopener">hexo系列教程</a></li>
 </ol>
 <hr>
-<p>** 反馈与建议 **</p>
+<p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="mailto:&#x79;&#117;&#x6e;&#98;&#105;&#97;&#111;&#x7a;&#x68;&#x61;&#x6f;&#64;&#104;&#x6f;&#116;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;" target="_blank" rel="noopener">&#x79;&#117;&#x6e;&#98;&#105;&#97;&#111;&#x7a;&#x68;&#x61;&#x6f;&#64;&#104;&#x6f;&#116;&#x6d;&#97;&#105;&#108;&#x2e;&#99;&#x6f;&#109;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x79;&#117;&#x6e;&#x62;&#x69;&#x61;&#x6f;&#x7a;&#x68;&#97;&#111;&#64;&#104;&#111;&#x74;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;">&#x79;&#117;&#x6e;&#x62;&#x69;&#x61;&#x6f;&#x7a;&#x68;&#97;&#111;&#64;&#104;&#111;&#x74;&#x6d;&#97;&#105;&#x6c;&#46;&#99;&#111;&#109;</a></li>
 </ul>
   
 	</div>
@@ -605,7 +614,7 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Tiny_search End -->
 
   </body>
 </html>
