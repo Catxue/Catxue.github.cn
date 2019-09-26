@@ -19,7 +19,7 @@
 <meta property="og:site_name" content="薛老板的猫">
 <meta property="og:description" content="我写技术博客的初衷是为了写一些学习笔记，一方面加深自己对问题的理解同时也能帮助他人。作为一名理工男许多问题都要涉及到数学，学习数学最大的好处是它可以说服任何人相信你是对的，坏处就是你用数学说话没人想听。如果在写技术博客连个好看的数学公式都敲不出来，那就更没有人愿意去学习了。 由于我博客是用Hexo搭建在github上的，并使用MathJax插件实现数学公式编辑，至于其他方式建立的博客比如：jeky">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-26T16:03:28.246Z">
+<meta property="og:updated_time" content="2019-09-26T16:53:31.904Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MathJax插件在hexo中的应用">
 <meta name="twitter:description" content="我写技术博客的初衷是为了写一些学习笔记，一方面加深自己对问题的理解同时也能帮助他人。作为一名理工男许多问题都要涉及到数学，学习数学最大的好处是它可以说服任何人相信你是对的，坏处就是你用数学说话没人想听。如果在写技术博客连个好看的数学公式都敲不出来，那就更没有人愿意去学习了。 由于我博客是用Hexo搭建在github上的，并使用MathJax插件实现数学公式编辑，至于其他方式建立的博客比如：jeky">
@@ -157,7 +157,7 @@
 <p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x79;&#x75;&#110;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#64;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x75;&#110;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#64;&#x68;&#x6f;&#116;&#x6d;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#121;&#x75;&#x6e;&#x62;&#105;&#x61;&#111;&#122;&#104;&#97;&#x6f;&#64;&#104;&#111;&#116;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#121;&#x75;&#x6e;&#x62;&#105;&#x61;&#111;&#122;&#104;&#97;&#x6f;&#64;&#104;&#111;&#116;&#x6d;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a></li>
 </ul>
   
 	</div>
@@ -581,6 +581,35 @@ var _hmt = _hmt || [];
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->
