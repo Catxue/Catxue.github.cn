@@ -175,7 +175,7 @@ stylus:
 <p>** 反馈与建议 **</p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="mailto:&#121;&#117;&#110;&#x62;&#x69;&#97;&#111;&#122;&#x68;&#97;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;" target="_blank" rel="noopener">&#121;&#117;&#110;&#x62;&#x69;&#97;&#111;&#122;&#x68;&#97;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="mailto:&#121;&#x75;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#97;&#x6f;&#x40;&#x68;&#x6f;&#x74;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#109;" target="_blank" rel="noopener">&#121;&#x75;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#97;&#x6f;&#x40;&#x68;&#x6f;&#x74;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#111;&#109;</a></li>
 </ul>
   
 	</div>
@@ -302,7 +302,11 @@ stylus:
 			
 		
 			
-				<li><a href="/tags/Aurora/" title="Aurora">Aurora<sup>1</sup></a></li>
+				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 			
@@ -310,11 +314,7 @@ stylus:
 			
 		
 			
-				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+				<li><a href="/tags/Aurora/" title="Aurora">Aurora<sup>1</sup></a></li>
 			
 		
 			
@@ -634,24 +634,22 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
+<!-- Tiny_search End -->
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
 </script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-
-  </body>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
