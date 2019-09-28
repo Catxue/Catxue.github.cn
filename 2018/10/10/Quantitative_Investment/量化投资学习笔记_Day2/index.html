@@ -11,19 +11,19 @@
     
 
     
-    <meta name="description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#121;&amp;#117">
+    <meta name="description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#x79;&amp;#117">
 <meta name="keywords" content="量化投资,金融">
 <meta property="og:type" content="article">
 <meta property="og:title" content="量化投资学习笔记 Day2">
 <meta property="og:url" content="http://www.catxue.cn/2018/10/10/Quantitative_Investment/量化投资学习笔记_Day2/index.html">
 <meta property="og:site_name" content="薛老板的猫">
-<meta property="og:description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#121;&amp;#117">
+<meta property="og:description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#x79;&amp;#117">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/CAPM.png">
 <meta property="og:updated_time" content="2019-09-28T05:47:45.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="量化投资学习笔记 Day2">
-<meta name="twitter:description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#121;&amp;#117">
+<meta name="twitter:description" content="期权定价货币的时间价值货币市场 期货合约：（Futures contract），简称期货（Futures），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。     反馈与建议   微博：@薛老板的猫 邮箱：&amp;#x79;&amp;#117">
 <meta name="twitter:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/CAPM.png">
 <meta name="twitter:creator" content="@ScofieldG">
 <link rel="publisher" href="115505285887983792207">
@@ -120,7 +120,7 @@
 <p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#58;&#121;&#117;&#110;&#x62;&#x69;&#x61;&#x6f;&#122;&#104;&#x61;&#x6f;&#x40;&#104;&#x6f;&#116;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#121;&#117;&#110;&#x62;&#x69;&#x61;&#x6f;&#122;&#104;&#x61;&#x6f;&#x40;&#104;&#x6f;&#116;&#x6d;&#x61;&#x69;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x79;&#117;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#x68;&#x61;&#111;&#64;&#104;&#x6f;&#x74;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#117;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#x68;&#x61;&#111;&#64;&#104;&#x6f;&#x74;&#x6d;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#x6d;</a></li>
 </ul>
   
 	</div>
@@ -243,14 +243,6 @@
 			
 		
 			
-				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
 			
 		
@@ -260,6 +252,14 @@
 		
 			
 				<li><a href="/tags/核分析/" title="核分析">核分析<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
 			
 		
 		</ul>
