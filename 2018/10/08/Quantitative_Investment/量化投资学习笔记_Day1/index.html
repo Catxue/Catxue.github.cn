@@ -164,7 +164,7 @@
 <p>1977年，爱尔兰的经济学家Phelim Boyle通过大量地模拟基础资产未来的收益，并取平均值，以此对期权进行定价，这就是蒙特卡罗方法，也是期权定价的第三种方法（另外两种分别是BSM模型和二叉树）。这种方法相对比较容易实现，并且使用灵活，在一切特定的情况下，比如股票价格发生突变，蒙特卡罗法定价具有明显的优势。</p>
 <p><strong>利率定价</strong></p>
 <p>70年代中期，量化金融模型已经非常普遍，但却没有关于利率定价的模型。有些人运用股票期权定价的公式来对利率期权进行定价，但是关于利率计算的完整框架还未建立。直到1977年，Vasicek提出的利率模型解决了这个问题。他将短期利率抽象为随机游走的模型，利率的价格可以用以下随机微分方程表示：</p>
-<script type="math/tex; mode=display">dr_t = a(b - r_t) \\;dt + \\sigma \\; dW_t</script><p>其中$W_t$是在风险中性框架下的维纳过程，$\sigma$表示利率的波动率</p>
+<script type="math/tex; mode=display">dr_t = a(b - r_t) \\;dt + \\sigma \\; dW_t</script><p>其中$W_t$是在风险中性框架下的维纳过程，$\\sigma$表示利率的波动率</p>
 <p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/Zins-Vasicek.png" width="70%" height="70%"></p>
 <p><strong>二叉树模型</strong></p>
 <p>BSM公式通过随机微积分的方式得到期权定价的偏微分方程，但是在当时金融从业者并不都精通数学和物理，只有极少数的人能理解这个公式；Boyle提出的蒙特卡罗模拟法是一种易于理解的方法，但是真正将期权定价推向普及的是Cox,Ross, Rubinstein这三位MBA在读的学生，即二叉树模型。</p>
@@ -282,7 +282,7 @@
 <p><strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="&#x6d;&#97;&#x69;&#108;&#x74;&#x6f;&#x3a;&#x79;&#x75;&#x6e;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;">&#x79;&#x75;&#x6e;&#x62;&#105;&#x61;&#111;&#122;&#x68;&#x61;&#x6f;&#x40;&#x68;&#x6f;&#116;&#109;&#x61;&#x69;&#x6c;&#46;&#99;&#111;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#58;&#x79;&#117;&#x6e;&#98;&#x69;&#97;&#111;&#122;&#104;&#x61;&#111;&#64;&#x68;&#111;&#116;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;">&#x79;&#117;&#x6e;&#98;&#x69;&#97;&#111;&#122;&#104;&#x61;&#111;&#64;&#x68;&#111;&#116;&#109;&#97;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#109;</a></li>
 </ul>
   
 	</div>
@@ -413,15 +413,15 @@
 			
 		
 			
+				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
 			
 		
 			
@@ -706,6 +706,35 @@ var _hmt = _hmt || [];
 
 <!-- MathJax Begin -->
 <!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <!-- MathJax End -->
