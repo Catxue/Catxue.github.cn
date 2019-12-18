@@ -147,7 +147,7 @@
 <p> <strong> 反馈与建议 </strong></p>
 <ul>
 <li>微博：<a href="http://weibo.com/u/2508757291" target="_blank" rel="noopener">@薛老板的猫</a></li>
-<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#121;&#x75;&#x6e;&#x62;&#x69;&#97;&#111;&#x7a;&#104;&#x61;&#111;&#64;&#x68;&#x6f;&#116;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;">&#121;&#x75;&#x6e;&#x62;&#x69;&#97;&#111;&#x7a;&#104;&#x61;&#111;&#64;&#x68;&#x6f;&#116;&#109;&#97;&#x69;&#108;&#x2e;&#99;&#x6f;&#x6d;</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#x3a;&#121;&#117;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#x61;&#111;&#64;&#104;&#111;&#x74;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;">&#121;&#117;&#110;&#98;&#x69;&#97;&#x6f;&#122;&#104;&#x61;&#111;&#64;&#104;&#111;&#x74;&#x6d;&#x61;&#105;&#x6c;&#x2e;&#x63;&#111;&#109;</a></li>
 </ul>
   
 	</div>
@@ -266,10 +266,6 @@
 			
 		
 			
-				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
 			
 		
@@ -279,6 +275,10 @@
 		
 			
 				<li><a href="/tags/Aurora/" title="Aurora">Aurora<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
 			
 		
 			
@@ -598,7 +598,22 @@ var _hmt = _hmt || [];
 
 <!-- Tiny_search Begin -->
 
-<!-- Tiny_search End --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<!-- Tiny_search End -->
 
-  </body>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
 </html>
