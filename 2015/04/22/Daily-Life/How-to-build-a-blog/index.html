@@ -1,0 +1,668 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  
+    <title>如何建立自己的博客 | 薛老板的猫</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zhao Yunbiao">
+    
+
+    
+    <meta name="description" content="建立博客已经很长时间了，一直没有写一下建立博客的资料，或许也称之为“攻略”吧。写毕设论文写得头疼，特闲暇之余总结一下如何利用Hexo建立博客的资料，希望对读者有所启发。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何建立自己的博客">
+<meta property="og:url" content="http://www.catxue.cn/2015/04/22/Daily-Life/How-to-build-a-blog/index.html">
+<meta property="og:site_name" content="薛老板的猫">
+<meta property="og:description" content="建立博客已经很长时间了，一直没有写一下建立博客的资料，或许也称之为“攻略”吧。写毕设论文写得头疼，特闲暇之余总结一下如何利用Hexo建立博客的资料，希望对读者有所启发。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2015-04-22T06:17:14.000Z">
+<meta property="article:modified_time" content="2018-10-19T16:39:27.000Z">
+<meta property="article:author" content="Zhao Yunbiao">
+<meta property="article:tag" content="生活随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@ScofieldG">
+<link rel="publisher" href="115505285887983792207">
+
+    
+    <link rel="alternative" href="/atom.xml" title="薛老板的猫" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="薛老板的猫" title="薛老板的猫"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="薛老板的猫">薛老板的猫</a></h1>
+				<h2 class="blog-motto">This is my blog, believe it or not.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+   						 <form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+  					     <label>Search</label>
+                         <input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+                         </form>
+					
+					</li>
+				</ul>
+			</nav>	
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','TCN7rg7gmf5cKxPeYZgp','2.0.0');
+</script>		
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/04/22/Daily-Life/How-to-build-a-blog/" title="如何建立自己的博客" itemprop="url">如何建立自己的博客</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/115505285887983792207?rel=author" title="Zhao Yunbiao" target="_blank" itemprop="author">Zhao Yunbiao</a>
+		
+  <p class="article-time">
+    <time datetime="2015-04-22T06:17:14.000Z" itemprop="datePublished"> 发表于 2015-04-22</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.</span> <span class="toc-text">什么是博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">2.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo"><span class="toc-number">3.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown"><span class="toc-number">4.</span> <span class="toc-text">Markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%E5%92%8CCSS"><span class="toc-number">5.</span> <span class="toc-text">HTML和CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">6.</span> <span class="toc-text">搭建博客</span></a></li></ol>
+		
+		</div>
+		
+		<p>建立博客已经很长时间了，一直没有写一下建立博客的资料，或许也称之为<strong>“攻略”</strong>吧。写毕设论文写得头疼，特闲暇之余总结一下如何利用Hexo建立博客的资料，希望对读者有所启发。<br><a id="more"></a></p>
+<hr>
+<h2 id="什么是博客"><a href="#什么是博客" class="headerlink" title="什么是博客"></a>什么是博客</h2><p>什么是博客呢？<strong>Blog</strong>的English解释是Web Log，意指<strong>log on the web</strong>。我认为博客就是一个可以记录生活、抒发情感也可以分享学习知识、结交朋友的平台。当然对于单身男士们，博客是一个很好地提升自己逼格和把妹的平台，有博客就是这么任性！废话少说，接下来就来介绍如何在短期内很好地建立自己的博客。</p>
+<hr>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>什么是Git,看下面的官方定义：</p>
+<blockquote>
+<p><strong>Git</strong> is a free and <strong>open source</strong> distributed <strong>version control</strong> system<br>designed to handle everything from small to very large projects with<br><strong>speed</strong> and <strong>efficiency</strong>.</p>
+</blockquote>
+<p>看了这个你也许会想,纳尼！建立一个博客还要学习什么Git语言，不写博客也罢。少年~，不要着急，这个只要求入门级别就行，大概用个半天时间就足够了。学习Git只是让你知道如何建立远程仓库以及上传自己的博客而已，当然如果你想学得很nice，那就要花个几天了。</p>
+<p>Git入门我推荐你学习<a target="_blank" rel="noopener" href="http://weibo.com/liaoxuefeng">廖雪峰</a>写的<a target="_blank" rel="noopener" href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">史上最浅显易懂的Git教程</a>。如果你觉得不够那就看看<a target="_blank" rel="noopener" href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">图解Git</a>，当然你有强迫症，非要搞得很透彻，那就看这个<a target="_blank" rel="noopener" href="http://git.oschina.net/progit/">Pro Git</a>吧。</p>
+<hr>
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>什么是<a target="_blank" rel="noopener" href="http://hexo.io/">hexo</a>,看看官方定义：</p>
+<blockquote>
+<p><strong>A</strong> <strong>fast</strong>, <strong>simple</strong> <strong>&amp;</strong> <strong>powerful</strong> <strong>blog framework</strong></p>
+</blockquote>
+<p>hexo出自台湾大学生<a target="_blank" rel="noopener" href="http://zespia.tw/">Tommy Chen</a>之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。当然有人也用Octopress搭建博客，那就还是看看<a target="_blank" rel="noopener" href="http://zespia.tw/blog/2012/10/11/hexo-debut/">Hexo 颯爽登場！</a>就知道两者的区别了。hexo需要了解什么呢？仅仅需要了解下面几条命令即可。</p>
+<p><strong>安装hexo</strong></p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p><strong>初始化</strong></p>
+<pre><code>hexo init &lt;folder&gt;
+</code></pre><p><strong>安装npm插件</strong></p>
+<pre><code>npm install
+</code></pre><p><strong>安装hexo-deployer-git插件</strong>，此插件会在主目录下生成<code>.deploy_git</code>文件并强行按照<code>_config</code>中配置进行推送。如果不存在<code>.deploy_git</code>文件，可通过<code>git init</code>命令建立。</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>其中配置选项为：</p>
+<pre><code>deploy:
+  type: git
+  repo: &lt;repository url&gt;
+  branch: [branch]
+  message: [message]
+</code></pre><p><strong>克隆主题</strong>，在博客根目录下执行<code>clone</code>命令，例如</p>
+<pre><code> git clone https://github.com/wuchong/jacman.git themes/jacman
+</code></pre><p><strong>启用</strong><br>修改你的博客根目录下的<code>_config.yml</code>配置文件中的<code>theme</code>属性，将其设置为jacman。同时建议设置<code>stylus</code>属性中的<code>compress</code>值为true，会自动压缩 CSS 文件，hexo默认配置中不包含这一项，建议开启。如下。</p>
+<pre><code>theme: jacman
+stylus:
+  compress: true
+</code></pre><p><strong>建立新文章</strong></p>
+<pre><code>hexo new_post &lt;title&gt;
+</code></pre><p><strong>生成博客文件</strong></p>
+<pre><code>hexo generate
+</code></pre><p><strong>上传服务器</strong></p>
+<pre><code>hexo server
+</code></pre><p><strong>清除文件</strong></p>
+<pre><code>hexo clean
+</code></pre><p>hexo常用的命令就这么几条，是不是很easy？ O(∩_∩)O~~</p>
+<hr>
+<h2 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h2><p>Markdown是什么东东？请看下面：</p>
+<blockquote>
+<p>Markdown 是一种<strong>轻量级标记语言</strong>，创始人为约翰·格鲁伯（John Gruber）。它允许人们“使用<strong>易读易写</strong>的<strong>纯文本格式</strong>编写文档，然后转换成有效的<strong>XHTML</strong>(或者<strong>HTML</strong>)文档”。</p>
+</blockquote>
+<p> Markdown相对于每一个看此篇博文的人都是件很Easy的事情，为什么这样说呢？因为我仅仅用了十分钟就学会了。如果你还是学不会而且还是个温柔贤惠的妹子，可以选择联系我哦。</p>
+<p> 关于Markdown网上的资源有很多，我推荐看三篇文档</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://www.appinn.com/markdown/index.html">Markdown 语法说明 (简体中文版)</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.zybuluo.com/mdeditor">作业部落</a></li>
+<li><a target="_blank" rel="noopener" href="http://yuedu.baidu.com/ebook/7408817d5f0e7cd184253681?fr=aladdin&amp;key=markdown">Markdown</a></li>
+</ol>
+<p>其实我是很推荐第三篇文档的电子书的，只是没有找到免费电子版的，考虑到不是所有的人都会花钱去看，就姑且放在最后了。在这里还是想吐槽一下那些觉得花几块钱买本书看都要BB半天的人，如果说你可以买得起iPad却看不起几本几十元的书，请自觉绕开，我们不是一个次元。</p>
+<hr>
+<h2 id="HTML和CSS"><a href="#HTML和CSS" class="headerlink" title="HTML和CSS"></a>HTML和CSS</h2><p>这部分不是必学的，只是推荐而已。学过这个以后可以自己定制自己修改博客的样式当然也可以尝试自己写写博客模板。学习HTML和CSS后你就是半个前端工程师了，想到这里你是想学还是想学啊？推荐在<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/">W3School</a>网站学习HTML和CSS,当然作为进阶使用，你可以顺便学习一下<a target="_blank" rel="noopener" href="http://www.w3school.com.cn/x.asp">XML</a>。</p>
+<p>如果真心不想学习那么多东西，那还是推荐抽出时间看一下<a target="_blank" rel="noopener" href="http://www.jb51.net/shouce/html/html.htm">HTML 30分钟入门教程</a>。至少有个网页的基本概念，以及了解一些转义之类的东西。</p>
+<hr>
+<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><p>上面说了那么多东西，我只是在讲一些预备知识而已。我记得<strong>实践论</strong> 有这样的观点：<strong>实践、认识、再实践、再认识</strong>。学习了以上的知识再去搭建博客就会顺利，也在实践中再次认识学习。你也可以直接跳到这里阅读，从搭建博客的实践中学习，遇到什么问题学习什么东西。</p>
+<p>我只是在汇总搭建博客预备知识，关于具体搭建步骤内容，可以参考一下前人的经验：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="http://ibruce.info/2013/11/22/hexo-your-blog/">hexo你的博客</a></li>
+<li><a target="_blank" rel="noopener" href="http://cnfeat.com/blog/2014/05/10/how-to-build-a-blog/">简明Github Pages与Hexo教程</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cnblogs.com/tengj/tag/hexo/">hexo系列教程</a></li>
+</ol>
+<hr>
+<p><strong> 反馈与建议 </strong></p>
+<ul>
+<li>微博：<a target="_blank" rel="noopener" href="http://weibo.com/u/2508757291">@薛老板的猫</a></li>
+<li>邮箱：<a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x79;&#117;&#110;&#98;&#105;&#x61;&#x6f;&#122;&#104;&#97;&#111;&#64;&#104;&#x6f;&#116;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#109;">&#x79;&#117;&#110;&#98;&#105;&#x61;&#x6f;&#122;&#104;&#97;&#111;&#64;&#104;&#x6f;&#116;&#x6d;&#97;&#x69;&#x6c;&#46;&#99;&#111;&#109;</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/生活随笔/">生活随笔</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://www.catxue.cn/2015/04/22/Daily-Life/How-to-build-a-blog/" data-title="如何建立自己的博客 | 薛老板的猫" data-tsina="u/2508757291" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/05/26/Fun-in-LaTeX/shapepar/" title="好玩的LaTeX—shapepar">
+  <strong>上一篇：</strong><br/>
+  <span>
+  好玩的LaTeX—shapepar</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/04/12/MISC/Aurora/"  title="Aurora插件在word中的应用">
+ <strong>下一篇：</strong><br/> 
+ <span>Aurora插件在word中的应用
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/04/22/Daily-Life/How-to-build-a-blog/" data-title="如何建立自己的博客" data-url="http://www.catxue.cn/2015/04/22/Daily-Life/How-to-build-a-blog/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.</span> <span class="toc-text">什么是博客</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git"><span class="toc-number">2.</span> <span class="toc-text">Git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo"><span class="toc-number">3.</span> <span class="toc-text">hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markdown"><span class="toc-number">4.</span> <span class="toc-text">Markdown</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML%E5%92%8CCSS"><span class="toc-number">5.</span> <span class="toc-text">HTML和CSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">6.</span> <span class="toc-text">搭建博客</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/核技术/" title="核技术">核技术<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/计算机/" title="计算机">计算机<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/金融/" title="金融">金融<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LaTeX/" title="LaTeX">LaTeX<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量化投资/" title="量化投资">量化投资<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/金融/" title="金融">金融<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Aurora/" title="Aurora">Aurora<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/核分析/" title="核分析">核分析<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 青春不是一段年华，而是一种心境。 <br/>
+			Youth is not a time of life, it is a state of mind.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/u/2508757291" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Catxue" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/ScofieldG" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		
+		<a href="https://www.linkedin.com/in/yunbiaozhao" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		<a href="http://www.zhihu.com/people/yunbiaozhao" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/115505285887983792207?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yunbiaozhao@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		
+ 		© 2020 Hosted by <a href="https://pages.coding.me" target="_blank">Coding Pages</a> <br/>
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a>  
+		
+		<a href="/about" target="_blank" title="Zhao Yunbiao">Zhao Yunbiao</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"catxue"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,0 +1,769 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+  
+    <title>量化投资学习笔记 Day1 | 薛老板的猫</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="Zhao Yunbiao">
+    
+
+    
+    <meta name="description" content="作为一名爱折腾的理工科Geeker，和很多人一样，一直觉得量化投资比较神秘。最近正好在了解量化投资方面的一些东西，顺便分享一下自己的量化投资学习笔记，以供他人参考学习及自己复习。这份笔记可能不够细腻，若有理解有误之处，欢迎前来指正。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="量化投资学习笔记 Day1">
+<meta property="og:url" content="http://www.catxue.cn/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/index.html">
+<meta property="og:site_name" content="薛老板的猫">
+<meta property="og:description" content="作为一名爱折腾的理工科Geeker，和很多人一样，一直觉得量化投资比较神秘。最近正好在了解量化投资方面的一些东西，顺便分享一下自己的量化投资学习笔记，以供他人参考学习及自己复习。这份笔记可能不够细腻，若有理解有误之处，欢迎前来指正。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/CAPM.png">
+<meta property="og:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/market%20tails%20.png">
+<meta property="og:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/quasirandom1.jpg">
+<meta property="og:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/Zins-Vasicek.png">
+<meta property="article:published_time" content="2018-10-08T14:15:27.000Z">
+<meta property="article:modified_time" content="2019-09-28T05:47:38.000Z">
+<meta property="article:author" content="Zhao Yunbiao">
+<meta property="article:tag" content="量化投资">
+<meta property="article:tag" content="金融">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/CAPM.png">
+<meta name="twitter:creator" content="@ScofieldG">
+<link rel="publisher" href="115505285887983792207">
+
+    
+    <link rel="alternative" href="/atom.xml" title="薛老板的猫" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/%02.css">
+<link rel="stylesheet" href="/.css">
+
+<meta name="generator" content="Hexo 5.2.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="薛老板的猫" title="薛老板的猫"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="薛老板的猫">薛老板的猫</a></h1>
+				<h2 class="blog-motto">This is my blog, believe it or not.</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+   						 <form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+  					     <label>Search</label>
+                         <input type="text" id="search" class="st-default-search-input" maxlength="20" placeholder="Search" />
+                         </form>
+					
+					</li>
+				</ul>
+			</nav>	
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+  
+  _st('install','TCN7rg7gmf5cKxPeYZgp','2.0.0');
+</script>		
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/" title="量化投资学习笔记 Day1" itemprop="url">量化投资学习笔记 Day1</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="https://plus.google.com/115505285887983792207?rel=author" title="Zhao Yunbiao" target="_blank" itemprop="author">Zhao Yunbiao</a>
+		
+  <p class="article-time">
+    <time datetime="2018-10-08T14:15:27.000Z" itemprop="datePublished"> 发表于 2018-10-08</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是量化投资？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E4%B8%BB%E8%A6%81%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">量化投资主要分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E5%8E%86%E5%8F%B2"><span class="toc-number">3.</span> <span class="toc-text">量化投资历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">4.</span> <span class="toc-text">量化投资的主要内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%87%91%E8%9E%8D%E8%AF%81%E5%88%B8%E5%B8%82%E5%9C%BA"><span class="toc-number">5.</span> <span class="toc-text">简单金融证券市场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%97%A0%E9%A3%8E%E9%99%A9%E8%B5%84%E4%BA%A7"><span class="toc-number">5.1.</span> <span class="toc-text">1.无风险资产</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A3%8E%E9%99%A9%E8%AF%81%E5%88%B8"><span class="toc-number">5.2.</span> <span class="toc-text">2.风险证券</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%91%E8%9E%8D%E8%AF%81%E5%88%B8%E5%B8%82%E5%9C%BA"><span class="toc-number">6.</span> <span class="toc-text">金融证券市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%82%A1%E7%A5%A8%E5%8F%8A%E5%85%B6%E8%A1%8D%E7%94%9F%E4%BA%A7%E5%93%81"><span class="toc-number">7.</span> <span class="toc-text">股票及其衍生产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">
+ </span></a></li></ol>
+		
+		</div>
+		
+		<p>作为一名爱折腾的理工科Geeker，和很多人一样，一直觉得量化投资比较神秘。最近正好在了解量化投资方面的一些东西，顺便分享一下自己的量化投资学习笔记，以供他人参考学习及自己复习。这份笔记可能不够细腻，若有理解有误之处，欢迎前来指正。</p>
+<a id="more"></a>
+<h2 id="什么是量化投资？"><a href="#什么是量化投资？" class="headerlink" title="什么是量化投资？"></a>什么是量化投资？</h2><p><a target="_blank" rel="noopener" href="https://xueqiu.com/9206540776/66541586"><strong>量化投资</strong></a> (Quantitative Investment) 其实就是定量投资，是通过分析一定的数据，在有合理逻辑的支撑下，运用某种策略所进行的具有胜率优势的投资。</p>
+<h2 id="量化投资主要分类"><a href="#量化投资主要分类" class="headerlink" title="量化投资主要分类"></a>量化投资主要分类</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/coderpai/article/details/79074957"><strong>统计套利</strong></a> (Statistics Arbitrage) 是从过往数据中找出规律，进而形成策略的一类套利。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/%E7%AE%97%E6%B3%95%E4%BA%A4%E6%98%93"><strong>算法交易</strong></a> (Algorithm Trading) 又称自动交易、黑盒交易或者机器交易，它指的是通过使用计算机程序来发出交易指令的方法。在交易中，程序可以决定的范围包括交易时间的选择、交易的价格，甚至包括最后需要成交的证券数量。</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%AB%98%E9%A0%BB%E4%BA%A4%E6%98%93"><strong>高频交易</strong></a> (High Frenquency Trading) 是指从那些人们无法利用的极为短暂的市场变化中寻求获利的计算机交易。比如，某种证券买入价和卖出价差价的微小变化，或者某只股票在不同交易所之间微小价差。这种交易速度很快，导致很多交易机构将服务器安置到离交易所计算机很近的地方，以缩短交易指令。</p>
+<h2 id="量化投资历史"><a href="#量化投资历史" class="headerlink" title="量化投资历史"></a>量化投资历史</h2><p> <strong>1. 20世纪50~60年代: 资本资产定价模型（CAMP）、有效市场假说（EMH）</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://xueqiu.com/7060676637/78039360?from=singlemessage">资本资产定价模型（CAMP）</a></strong></p>
+<p>1963年，斯坦福大学的William Sharpe，哈佛大学的JohnLintner和挪威的经济学家Jan Mossin在Markowitz现在投资组合理论的基础之上，用一个简单的模型对风险资产进行定价，即资本资产定价模型(Capital Asset Pricing Model)。这个模型将资产收益对市场变化的敏感性用β来表示，同时将无风险收益率考虑在内，得出风险资产预期收益率。</p>
+<p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/CAPM.png" width="70%" height="70%"></p>
+<script type="math/tex; mode=display">ER_i = R_f + \\beta_i(ER_m) - R_f</script><p> $ER_i$ = Expected return of investment<br> $R_f$ = Risk-free rate<br> $β_i$ = Beta of the investment<br> $ER_m$ = Expected return of market<br> $(ER_m - R_f)$ = Market risk premium</p>
+<p>CAPM考虑一种特殊形式的功效函数，只包含了收益率的一阶矩和二阶矩，换句话说就是收益率的分布仅仅由均值和方差决定。在这些条件下，CAPM认为权益的成本仅仅由β决定。和现代组合理论类似，CAPM也有一系列过于理想化的假设，导致模型在实证分析中效果不佳。不过尽管之后出现了套利定价理论等更为复杂精确的模型，CAPM由于它的简单易用，直到现在依然很受欢迎。</p>
+<p><a target="_blank" rel="noopener" href="https://xueqiu.com/7060676637/78039360?from=singlemessage"><strong>有效市场假说（EMH）</strong></a></p>
+<p>1965年，芝加哥大学的经济金融学博士Fama在他的博士论文中分析了股票价格变动的行为，并得出结论：短期的股票价格不可预测，近似于随机游走。股票市场收益是厚尾分布，这意味着一些极端情况的出现相比于正态分布假设下出现的频率更高。</p>
+<p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/market%20tails%20.png" alt="股票市场的收益"></p>
+<p>1970年，Fama提出了有效市场的理论，主要分为两大部分：一是将市场的有效性分为三种情况：强势有效、半强势有效和弱势有效，解释了在不同的市场有效性的情况下，公开信息是如何反应到股票价格中；二是认为在无法否定市场平衡的情况下，市场的有效性也无法被拒绝。这个概念称为“联合假设问题”，意思是市场有效性需要由预期收益来进行验证，但是往往预期收益和实际收益的偏差很大，因此我们无法证明市场是非有效的，研究者只能不断通过修改模型来减少市场偏差。</p>
+<p>Fama的另一个贡献就是他的三因子模型。在资本资产定价模型（CAPM）等传统理论下，投资组合的全部风险溢价由Beta系数表示。但是这一模型在解释股票市场回报的现实情况上，如一月效应，遇到了诸多挑战。Fama和French观察发现市值较小、市值账面比较低的两类公司更有可能取得优于市场水平的平均回报率。由此三因子模型通过引入二个新的解释变量：市净率、公司规模、与CAPM中的市场指数一同估计股票的回报水平。</p>
+<p>其中r是投资组合的期望收益率，Rf是市场无风险收益率，Rm是市场组合的收益率，三个变量的待估系数beta是市场组合风险溢价、规模溢价、市净率溢价三个因素变化对期望收益率的影响，其中市场组合风险溢价的系数beta概念接近于CAPM模型中的beta系数。</p>
+<p>公司规模变量SMB是指由市值小的公司组成的投资组合回报与市值大的公司组成的投资组合回报之差，市净率溢价HML是账面价值比较高的公司组成的投资组合回报与比值较低的公司投资组合回报之差。alpha是超额收益率，在理想的情况下，投资组合的超额回报将全部被三因素解释，从而alpha应在统计学意义上等于0。</p>
+<p><strong>准随机数</strong></p>
+<p>1960年代中期，许多学者开始致力于准随机数理论，或者称为低偏差序列理论的研究。这个课题关心的是一系列点在任意维度的分布情况，以尽可能少量的点最大程度覆盖整个空间。粗略来讲，如果一个序列中随机取出一部分点组成集合B并且和B的测度接近，多次试验取平均值的情况下，可以认为序列的偏差较低。低偏差序列并不是随机，也不是伪随机，它通常用来代替随机均匀分布序列，它通常具有随机数的一些性质，因此在多个领域中发挥重要运用。</p>
+<p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/quasirandom1.jpg" width="70%" height="70%"></p>
+<p>相比于纯随机数，准随机数可以更快速地解决一些问题。确定性的方法一般只有在所有数据都完备的时候，给出一个精确解；而准随机数可以随着数据的增加不断地迭代计算，使得结果越来越接近精确值。概率论中，准随机数可以用来发现特征函数和概率密度函数，以及确定性的函数在微小扰动情况下的导函数，准随机数还可以准确快速地计算高阶矩。</p>
+<script type="math/tex; mode=display">\\int\_0^1 f(u) du \\approx \\frac{1}{N} \\sum^N\_{i=1} f(x\_i)</script><p>此外，准随机数还可以用于：对于一些不涉及排序的统计指标，如均值、方差、偏度等；复杂的确定性函数的积分、全局最值的计算；一些局部确定性算法的起点，如Newton–Raphson迭代；以及一些搜索算法。这一数学工具的发展，推动了多元积分、蒙特卡洛方法，数值积分的运用，对金融领域之后三十年的发展起到了重大作用。</p>
+<p><strong>2. 20世纪70~80年代：期权定价模型、套利定价理论（APT）</strong></p>
+<p>1973年，三位经济学家Fischer Black，Myron Scholes 和Robert Merton给出了欧式期权定价的公式，此公式问世后带来了期权市场的繁荣。该公式被广泛使用，虽然在很多情况下被使用者进行一定的改动和修正。很多经验测试表明这个公式足够贴近市场价格，然而也有会出现差异的时候，如著名的“波动率的微笑”。模型的基本原理是几何布朗运动：</p>
+<script type="math/tex; mode=display">dS = \\mu S\\; dt + \\sigma S \\;dX</script><p>以及如下的前提假设条件：</p>
+<ol>
+<li>金融资产价格服从对数正态分布，而金融资产收益率服从正态分布；</li>
+<li>在期权有效期内，无风险利率和金融资产收益变量是恒定的；</li>
+<li>市场无摩擦，即不存在税收和交易成本；</li>
+<li>金融资产在期权有效期内无红利及其它所得（该假设后被放弃）；</li>
+<li>该期权是欧式期权，即在期权到期前不可实施。</li>
+</ol>
+<p>从而推导出欧式期权价格的偏微分方程：</p>
+<script type="math/tex; mode=display">\\frac{\\partial V}{\\partial t} + \\frac{1}{2}\\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS\\frac{\\partial V}{\\partial S} - rV = 0</script><p>求解这个方程得到欧式期权价格的表达式：</p>
+<script type="math/tex; mode=display">
+\\begin{align}
+  C(S_t, t) &= N(d_1)S_t - N(d_2) Ke^{-r(T - t)} \\\\
+     d_1 &= \\frac{1}{\\sigma\\sqrt{T - t}}\\left[\\ln\\left(\\frac{S_t}{K}\\right) + \\left(r + \\frac{\\sigma^2}{2}\\right)(T - t)\\right] \\\\
+     d_2 &= d_1 - \\sigma\\sqrt{T - t} \\\\
+\\end{align}</script><p><strong>公司债务风险</strong></p>
+<p>1974年，Robert Merton从看涨期权的角度来对公司价值和风险进行结构化建模，公司的债务关联到期权的执行价格，债务的期限则对应期权的到期日。如果某一时刻期权价值为0，则说明资产价值小于债务，导致公司破产。</p>
+<p>信用风险在90年代初迅速增加，关于这方面的理论和实践运用也在快速扩张，这导致了一些巨大的事件的发生，比如Merton所在的长期资本管理公司的破产。目前关于信用风险的理论基于Merton的模型已经有了长足的发展，引入了事件随机发生的泊松过程，比如破产或者违约，已有许多研究成果。</p>
+<p><strong>蒙特卡罗法</strong></p>
+<p>1977年，爱尔兰的经济学家Phelim Boyle通过大量地模拟基础资产未来的收益，并取平均值，以此对期权进行定价，这就是蒙特卡罗方法，也是期权定价的第三种方法（另外两种分别是BSM模型和二叉树）。这种方法相对比较容易实现，并且使用灵活，在一切特定的情况下，比如股票价格发生突变，蒙特卡罗法定价具有明显的优势。</p>
+<p><strong>利率定价</strong></p>
+<p>70年代中期，量化金融模型已经非常普遍，但却没有关于利率定价的模型。有些人运用股票期权定价的公式来对利率期权进行定价，但是关于利率计算的完整框架还未建立。直到1977年，Vasicek提出的利率模型解决了这个问题。他将短期利率抽象为随机游走的模型，利率的价格可以用以下随机微分方程表示：</p>
+<script type="math/tex; mode=display">dr_t = a(b - r_t) \\;dt + \\sigma \\; dW_t</script><p>其中$W_t$是在风险中性框架下的维纳过程，$\\sigma$表示利率的波动率</p>
+<p><img src="https://freebedroom-1257850133.cos.ap-beijing.myqcloud.com/freebedroom/Quantitative_Investment/Zins-Vasicek.png" width="70%" height="70%"></p>
+<p><strong>二叉树模型</strong></p>
+<p>BSM公式通过随机微积分的方式得到期权定价的偏微分方程，但是在当时金融从业者并不都精通数学和物理，只有极少数的人能理解这个公式；Boyle提出的蒙特卡罗模拟法是一种易于理解的方法，但是真正将期权定价推向普及的是Cox,Ross, Rubinstein这三位MBA在读的学生，即二叉树模型。</p>
+<p>二叉树期权定价模型建立在一个基本假设基础上，即在给定的时间间隔内，证券的价格运动有两个可能的方向：上涨或者下跌。虽然这一假设非常简单，但由于可以把一个给定的时间段细分为更小的时间单位，因而二叉树期权定价模型适用于处理更为复杂的期权。</p>
+<p><strong>3. 20世纪80~90年代：VaR模型、行为金融学</strong></p>
+<p><strong>风险价值模型</strong></p>
+<p><strong>VaR方法</strong> (Value at Risk，VaR），称为<strong>风险价值模型</strong>，也称受险价值方法、在险价值方法，常用于金融机构的风险管理，于1993年提出。</p>
+<p><strong>VaR方法提出的背景</strong></p>
+<p>传统的ALM(Asset-Liability Management,资产负债管理)过于依赖报表分析，缺乏时效性；利用方差及β系数来衡量风险太过于抽象，不直观，而且反映的只是市场（或资产）的波动幅度；</p>
+<p>在上述传统的几种方法都无法准确定义和度量金融风险时，G30集团在研究衍生品种的基础上，于1993年发表了题为《衍生产品的实践和规则》的报告，提出了度量市场风险的VAR(Value at Risk：风险价值)方法已成为目前金融界测量市场风险的主流方法。稍后由J.P.Morgan推出的用于计算 VAR的Risk Metrics风险控制模型更是被众多金融机构广泛采用。目前国外一些大型金融机构已将其所持资。</p>
+<p><strong>VAR的定义：</strong></p>
+<p>VAR(Value at Risk)按字面解释就是”<strong>风险价值</strong>“，其含义指：在市场正常波动下，某一金融资产或证券组合的最大可能损失。更为确切的是指，在一定概率水平（置信度）下，某一金融资产或证券组合价值在未来特定时期内的<strong>最大可能损失</strong>。</p>
+<p><strong>4. 20世纪90年代-至今：非线性科学</strong></p>
+<h2 id="量化投资的主要内容"><a href="#量化投资的主要内容" class="headerlink" title="量化投资的主要内容"></a>量化投资的主要内容</h2><ul>
+<li>量化选股</li>
+<li>量化择时</li>
+<li>套利交易</li>
+<li>算法交易</li>
+<li>资产配置</li>
+<li>风险控制</li>
+<li>预测模型</li>
+</ul>
+<h2 id="简单金融证券市场"><a href="#简单金融证券市场" class="headerlink" title="简单金融证券市场"></a>简单金融证券市场</h2><h3 id="1-无风险资产"><a href="#1-无风险资产" class="headerlink" title="1.无风险资产"></a>1.无风险资产</h3><h3 id="2-风险证券"><a href="#2-风险证券" class="headerlink" title="2.风险证券"></a>2.风险证券</h3><p><strong><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/52506610/answer/257874531">Position  部位（持仓、头寸）</a></strong></p>
+<blockquote>
+<p>Position is the amount of cash, securities, commodities and to wider extent all financial instruments held and/or owned by a physical person or legal entity.</p>
+</blockquote>
+<p><strong>部位（持仓、头寸）</strong>是个人或法人<strong>持有的和/或拥有</strong>的现金、证券、商品等<strong>金融工具的总金额</strong>。</p>
+<p><strong>个人观点部位（持仓、头寸）本质上是某种形式的资金：可以是货币形式，也可以是非货币形式；可以是现货（现金、证券、商品等）形式，也可以是非现货（与各种现货对应的期货、期权等）形式。</strong></p>
+<blockquote>
+<p>In financial trading, a position is a binding commitment to buy or sell a given amount of financial instruments, such as securities, currencies or commodities, for a given price.</p>
+</blockquote>
+<p>在金融交易中，<strong>部位（持仓、头寸）</strong>是以指定价格买入或卖出指定数量金融工具（如证券、货币或商品）的<strong>具有约束力的承诺</strong>。</p>
+<blockquote>
+<p>In derivatives trading or for financial instruments, the concept of a position is used extensively.</p>
+</blockquote>
+<p>在金融衍生产品交易中，或对于金融工具，<strong>“部位（持仓、头寸）”</strong>概念被广泛用运用。</p>
+<blockquote>
+<p>There are two basic types of position: a long and a short.</p>
+</blockquote>
+<p>有两种基本类型的<strong>部位（持仓、头寸）</strong>：<strong>做多部位</strong>（持仓、头寸）和<strong>做空部位</strong>（持仓、头寸）。</p>
+<blockquote>
+<p>Generally speaking, long positions stand to gain from a rise of the price of the instrument and short positions from a fall (but with options the situation is more complicated).</p>
+</blockquote>
+<p>一般来说，做多部位（持仓、头寸）可以从金融工具的价格上涨中获利，而做空部位（持仓、头寸）可以从价格下跌中获利（期权的情况更为复杂）。</p>
+<blockquote>
+<p>Options will be used in the following explanations. The same principle applies for futures and other securities.For simplicity, only one contract is being traded in these examples.</p>
+</blockquote>
+<p>下面的解释以期权为例。同样的道理适用于期货和其它证券。为了简单起见，在这些例子中只交易一个合约。</p>
+<p><strong>Long Position</strong> <strong>做多部位 做多持仓 做多头寸 多头</strong></p>
+<blockquote>
+<p>When a trader buys an option contract that he is not short, he is said to be opening a long position. When a trader sells an option contract that he is already long, he is said to be closing a long position.</p>
+</blockquote>
+<p>当交易者买入一个还未持有的期权合约时，就说他建立（开立、进入）一个做多部位（持仓、头寸）。当交易者卖出一个已经持有的期权合约时，就说他平掉（关闭、退出）一个做多部位（持仓、头寸）。</p>
+<p><strong>Short Position</strong> <strong>做空部位 做空持仓 做空头寸 空头</strong></p>
+<blockquote>
+<p>When a trader sells an option contract that he is not long, he is said to be opening a short position. When a trader buys an option contract that he is already short, he is said to be closing a short position.</p>
+</blockquote>
+<p>当交易者卖出一个还未持有的期权合约时，就说他建立（开立、进入）一个做空部位（持仓、头寸）。当交易者买入一个已经持有的期权合约时，就说他平掉（关闭、退出）一个做空部位（持仓、头寸）。</p>
+<p><strong>Net Position</strong>  <strong>净部位 净持仓 净头寸</strong></p>
+<blockquote>
+<p>Net position is the difference between total open long (receivable) and open short (payable) positions in a given asset (security, foreign exchange currency, commodity, etc.) held by an individual.</p>
+</blockquote>
+<p>净部位（持仓、头寸）是个人或法人持有的指定资产（证券、外汇货币、商品等）中的全部敞口做多与做空部位（持仓、头寸）之差。 </p>
+<p><strong>个人观点部位（持仓、头寸）的三大属性一是方向（position direction），是做多还是做空；二是规模或大小（position size），头寸中的“寸”即是此意；三是建立时的价格位置（price level），部位中的“位”即是此意。</strong></p>
+<p><strong>收益率</strong></p>
+<ul>
+<li>简单收益率</li>
+<li>对数收益率</li>
+<li>超额收益率</li>
+</ul>
+<h2 id="金融证券市场"><a href="#金融证券市场" class="headerlink" title="金融证券市场"></a>金融证券市场</h2><ol>
+<li>随机性</li>
+<li>价格的正性</li>
+<li>可分性、流动性、卖空</li>
+<li>偿付能力</li>
+<li>离散单位价格</li>
+<li>无套利原则</li>
+</ol>
+<h2 id="股票及其衍生产品"><a href="#股票及其衍生产品" class="headerlink" title="股票及其衍生产品"></a>股票及其衍生产品</h2><p><strong>股票 (Stock; Share)</strong> 是一种有价证券，是股份公司为筹集资金发给投资者作为公司资本部分所有权的凭证，成为股东以此获取股息（股利），并分享公司成长或交易市场波动带来的利润；但也要共同承担公司运作错误带来的风险。</p>
+<p>股票的<strong>衍生产品</strong> —— 一个特定的合约</p>
+<ul>
+<li>远期合约</li>
+<li>期权</li>
+<li>期货</li>
+</ul>
+<p><strong>远期合约</strong>是在未来指定的时间以现在的固定价格购买或者卖出风险资产的协议。</p>
+<ul>
+<li>交割日（delivery date）</li>
+<li>远期价格（forward price）</li>
+<li>回报（payoff）</li>
+<li>持有成本（carrying cost）</li>
+</ul>
+<p><strong><a target="_blank" rel="noopener" href="http://finance.sina.com.cn/stock/usstock/c/20140326/175018622117.shtml">期权</a></strong>又称选择权，是一份合约，给与期权买家在特定日期或之前以特定价格买入或卖出标的资产的权利(<strong>而非义务</strong>)。期权与股票和债券一样，也是一种<strong>证券</strong>。同时它也是一种具有约束力的合约，具有严格限定的条款和特性。</p>
+<p>我们可以用一个日常生活中的例子来阐述期权的原理。比如说，你找到一套看起来不错的房子，想要买。但不幸的是你在3个月内没有足够的现金。于是你跟房主商量，希望房主给你在3个月内以20万美元买入的选择权(option)。房主同意了，但是为了获得这个权利，你需要支付3000美元的价格。</p>
+<p>　　现在我们可以考虑两种情形：</p>
+<p>　　1. 这所房子后来被发现是“猫王”真正的出生地！于是房子的市值突然飙升至100万美元。由于房主已经卖给你期权，所以他有义务将房子以20万美元卖给你。最终你将获得79.7万美元利润(100万减去20万再减去3000)。</p>
+<p>　　2. 仔细考察之后，你发现这所房子存在严重的质量问题，墙体开裂，储藏室里老鼠横行，甚至夜间还有闹鬼现象。虽然最初你以为自己找到了梦想中的房子，但现在感觉它一文不值。不过还好，由于你买的是期权，你没有义务必须把房子买下来。所以你最终损失的是3000美元的期权费。</p>
+<p>　　这个例子展示了期权的两个重要特征。首先，如果你买了一份期权，你有权利但没有义务去做什么事情。你可以让期权到期一直不执行，到期后期权的价值将归零。在这种情况下，你损失的是购买期权的全部费用。第二，期权是一种与标的资产相关的合约，因此期权属于衍生品，也就是说它的价值是从别的东西衍生出来的。在上面的例子中，房子就是那个标的资产。大部分情况下，标的资产是个股或者指数。</p>
+<p><strong>看涨期权 (Call Option）</strong>与 <strong>看跌期权 (Put  Option)</strong></p>
+<p>期权分为看涨期权和看跌期权：</p>
+<p>　　1. 看涨期权又叫买权，给与期权持有者在特定期限内以特定价格买入某种资产的权利。看涨期权类似于持有某只股票的多头仓位，个股看涨期权的买家希望在期权到期之前股价能够大幅上涨。</p>
+<p>　　2. 看跌期权又叫卖权，给与期权持有者在特定期限内以特定价格卖出某种资产的权利。看跌期权类似于持有某只股票的空头头寸，个股看跌期权的买家希望在期权到期之前股价能够下跌。</p>
+<p>　　期权市场的参与者</p>
+<p>　　根据各自的头寸情况，期权市场有4种类型的参与者：</p>
+<p>　　1. 看涨期权的买家</p>
+<p>　　2. 看涨期权的卖家</p>
+<p>　　3. 看跌期权的买家</p>
+<p>　　4. 看跌期权的卖家</p>
+<p>　　期权的买家又叫持权人(holder)，期权的卖家又叫立权人(writer)。另外，我们还可以说买家持有多头头寸，卖家持有空头头寸。</p>
+<p>　　期权买家与卖家之间有两个重大区别：</p>
+<p>　　1. 看涨期权和看跌期权的持权人(买家)没有买入或卖出的义务。他们可以选择是否执行自己的权利。</p>
+<p>　　2. 看涨期权和看跌期权的立权人(卖家)有义务买入或卖出。这意味着立权人可能被要求兑现买入或卖出的承诺。</p>
+<p><strong>期货合约</strong>：（<strong>Futures contract</strong>），简称<strong>期货</strong>（<strong>Futures</strong>），是一种跨越时间的交易方式。买卖双方透过签订合约了，同意按指定的时间、价格与其他交易条件，交收指定数量的现货。通常期货集中在期货交易所，以标准化合约进行买卖，但亦有部分期货合约可透过柜台交易进行买卖，称为场外交易合约。</p>
+<h2 id=""><a href="#" class="headerlink" title=" "></a><br/> </h2><p><br/> </p>
+<p><strong> 反馈与建议 </strong></p>
+<ul>
+<li>微博：<a target="_blank" rel="noopener" href="http://weibo.com/u/2508757291">@薛老板的猫</a></li>
+<li>邮箱：<a href="&#109;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x79;&#x75;&#x6e;&#x62;&#x69;&#97;&#111;&#x7a;&#104;&#x61;&#111;&#64;&#x68;&#111;&#116;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x79;&#x75;&#x6e;&#x62;&#x69;&#97;&#111;&#x7a;&#104;&#x61;&#111;&#64;&#x68;&#111;&#116;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></li>
+</ul>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/%E9%87%91%E8%9E%8D/">金融</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/量化投资/">量化投资</a><a href="/tags/金融/">金融</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://www.catxue.cn/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/" data-title="量化投资学习笔记 Day1 | 薛老板的猫" data-tsina="u/2508757291" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2018/10/10/Quantitative_Investment/Quantitative_Investment_Day2/" title="量化投资学习笔记 Day2">
+  <strong>上一篇：</strong><br/>
+  <span>
+  量化投资学习笔记 Day2</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2018/01/26/Fun-in-LaTeX/LaTeXTools/"  title="如何在Sublime Text中配置LaTeXTools">
+ <strong>下一篇：</strong><br/> 
+ <span>如何在Sublime Text中配置LaTeXTools
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/" data-title="量化投资学习笔记 Day1" data-url="http://www.catxue.cn/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是量化投资？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E4%B8%BB%E8%A6%81%E5%88%86%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">量化投资主要分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E5%8E%86%E5%8F%B2"><span class="toc-number">3.</span> <span class="toc-text">量化投资历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9"><span class="toc-number">4.</span> <span class="toc-text">量化投资的主要内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%87%91%E8%9E%8D%E8%AF%81%E5%88%B8%E5%B8%82%E5%9C%BA"><span class="toc-number">5.</span> <span class="toc-text">简单金融证券市场</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%97%A0%E9%A3%8E%E9%99%A9%E8%B5%84%E4%BA%A7"><span class="toc-number">5.1.</span> <span class="toc-text">1.无风险资产</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A3%8E%E9%99%A9%E8%AF%81%E5%88%B8"><span class="toc-number">5.2.</span> <span class="toc-text">2.风险证券</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%91%E8%9E%8D%E8%AF%81%E5%88%B8%E5%B8%82%E5%9C%BA"><span class="toc-number">6.</span> <span class="toc-text">金融证券市场</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%82%A1%E7%A5%A8%E5%8F%8A%E5%85%B6%E8%A1%8D%E7%94%9F%E4%BA%A7%E5%93%81"><span class="toc-number">7.</span> <span class="toc-text">股票及其衍生产品</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">8.</span> <span class="toc-text">
+ </span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/数学/" title="数学">数学<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/核技术/" title="核技术">核技术<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/计算机/" title="计算机">计算机<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/金融/" title="金融">金融<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LaTeX/" title="LaTeX">LaTeX<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/量化投资/" title="量化投资">量化投资<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/金融/" title="金融">金融<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Matlab/" title="Matlab">Matlab<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Aurora/" title="Aurora">Aurora<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/MathJax/" title="MathJax">MathJax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/计算机/" title="计算机">计算机<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/核分析/" title="核分析">核分析<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 青春不是一段年华，而是一种心境。 <br/>
+			Youth is not a time of life, it is a state of mind.</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		<a href="http://weibo.com/u/2508757291" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/Catxue" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		<a href="https://twitter.com/ScofieldG" target="_blank" class="icon-twitter" title="twitter"></a>
+		
+		
+		
+		<a href="https://www.linkedin.com/in/yunbiaozhao" target="_blank" class="icon-linkedin" title="linkedin"></a>
+		
+		
+		
+		<a href="http://www.zhihu.com/people/yunbiaozhao" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		<a href="https://plus.google.com/115505285887983792207?rel=author" target="_blank" class="icon-google_plus" title="Google+"></a>
+		
+		
+		<a href="mailto:yunbiaozhao@hotmail.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		
+ 		© 2020 Hosted by <a href="https://pages.coding.me" target="_blank">Coding Pages</a> <br/>
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a>  
+		
+		<a href="/about" target="_blank" title="Zhao Yunbiao">Zhao Yunbiao</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"catxue"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
