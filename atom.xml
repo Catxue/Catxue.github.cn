@@ -5,9 +5,9 @@
   <subtitle>This is my blog, believe it or not.</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.catxue.cn/"/>
+  <link href="http://www.catxue.top/"/>
   <updated>2019-09-28T05:47:45.000Z</updated>
-  <id>http://www.catxue.cn/</id>
+  <id>http://www.catxue.top/</id>
   
   <author>
     <name>Yancy Zhao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>量化投资学习笔记 Day2</title>
-    <link href="http://www.catxue.cn/2018/10/10/Quantitative_Investment/Quantitative_Investment_Day2/"/>
-    <id>http://www.catxue.cn/2018/10/10/Quantitative_Investment/Quantitative_Investment_Day2/</id>
+    <link href="http://www.catxue.top/2018/10/10/Quantitative_Investment/Quantitative_Investment_Day2/"/>
+    <id>http://www.catxue.top/2018/10/10/Quantitative_Investment/Quantitative_Investment_Day2/</id>
     <published>2018-10-10T14:15:27.000Z</published>
     <updated>2019-09-28T05:47:45.000Z</updated>
     
@@ -35,19 +35,19 @@
     
     </summary>
     
-      <category term="金融" scheme="http://www.catxue.cn/categories/%E9%87%91%E8%9E%8D/"/>
+      <category term="金融" scheme="http://www.catxue.top/categories/%E9%87%91%E8%9E%8D/"/>
     
     
-      <category term="量化投资" scheme="http://www.catxue.cn/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/"/>
+      <category term="量化投资" scheme="http://www.catxue.top/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/"/>
     
-      <category term="金融" scheme="http://www.catxue.cn/tags/%E9%87%91%E8%9E%8D/"/>
+      <category term="金融" scheme="http://www.catxue.top/tags/%E9%87%91%E8%9E%8D/"/>
     
   </entry>
   
   <entry>
     <title>量化投资学习笔记 Day1</title>
-    <link href="http://www.catxue.cn/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/"/>
-    <id>http://www.catxue.cn/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/</id>
+    <link href="http://www.catxue.top/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/"/>
+    <id>http://www.catxue.top/2018/10/08/Quantitative_Investment/Quantitative_Investment_Day1/</id>
     <published>2018-10-08T14:15:27.000Z</published>
     <updated>2019-09-28T05:47:38.000Z</updated>
     
@@ -59,19 +59,19 @@
     
     </summary>
     
-      <category term="金融" scheme="http://www.catxue.cn/categories/%E9%87%91%E8%9E%8D/"/>
+      <category term="金融" scheme="http://www.catxue.top/categories/%E9%87%91%E8%9E%8D/"/>
     
     
-      <category term="量化投资" scheme="http://www.catxue.cn/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/"/>
+      <category term="量化投资" scheme="http://www.catxue.top/tags/%E9%87%8F%E5%8C%96%E6%8A%95%E8%B5%84/"/>
     
-      <category term="金融" scheme="http://www.catxue.cn/tags/%E9%87%91%E8%9E%8D/"/>
+      <category term="金融" scheme="http://www.catxue.top/tags/%E9%87%91%E8%9E%8D/"/>
     
   </entry>
   
   <entry>
     <title>如何在Sublime Text中配置LaTeXTools</title>
-    <link href="http://www.catxue.cn/2018/01/26/Fun-in-LaTeX/LaTeXTools/"/>
-    <id>http://www.catxue.cn/2018/01/26/Fun-in-LaTeX/LaTeXTools/</id>
+    <link href="http://www.catxue.top/2018/01/26/Fun-in-LaTeX/LaTeXTools/"/>
+    <id>http://www.catxue.top/2018/01/26/Fun-in-LaTeX/LaTeXTools/</id>
     <published>2018-01-26T07:17:14.000Z</published>
     <updated>2019-09-28T06:22:24.000Z</updated>
     
@@ -83,17 +83,17 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://www.catxue.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="http://www.catxue.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="LaTeX" scheme="http://www.catxue.cn/tags/LaTeX/"/>
+      <category term="LaTeX" scheme="http://www.catxue.top/tags/LaTeX/"/>
     
   </entry>
   
   <entry>
     <title>Matlab绘图常见命令</title>
-    <link href="http://www.catxue.cn/2018/01/08/Matlab/Matlab_plot/"/>
-    <id>http://www.catxue.cn/2018/01/08/Matlab/Matlab_plot/</id>
+    <link href="http://www.catxue.top/2018/01/08/Matlab/Matlab_plot/"/>
+    <id>http://www.catxue.top/2018/01/08/Matlab/Matlab_plot/</id>
     <published>2018-01-08T10:15:27.000Z</published>
     <updated>2018-11-09T15:36:03.000Z</updated>
     
@@ -105,17 +105,17 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://www.catxue.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="http://www.catxue.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="Matlab" scheme="http://www.catxue.cn/tags/Matlab/"/>
+      <category term="Matlab" scheme="http://www.catxue.top/tags/Matlab/"/>
     
   </entry>
   
   <entry>
     <title>推荐几款提升办公效率的利器</title>
-    <link href="http://www.catxue.cn/2017/12/10/MISC/Win_Tools/"/>
-    <id>http://www.catxue.cn/2017/12/10/MISC/Win_Tools/</id>
+    <link href="http://www.catxue.top/2017/12/10/MISC/Win_Tools/"/>
+    <id>http://www.catxue.top/2017/12/10/MISC/Win_Tools/</id>
     <published>2017-12-10T12:12:20.000Z</published>
     <updated>2018-11-11T07:30:03.000Z</updated>
     
@@ -127,17 +127,17 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://www.catxue.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="http://www.catxue.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="计算机" scheme="http://www.catxue.cn/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="http://www.catxue.top/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
   </entry>
   
   <entry>
     <title>好玩的LaTeX—shapepar</title>
-    <link href="http://www.catxue.cn/2015/05/26/Fun-in-LaTeX/shapepar/"/>
-    <id>http://www.catxue.cn/2015/05/26/Fun-in-LaTeX/shapepar/</id>
+    <link href="http://www.catxue.top/2015/05/26/Fun-in-LaTeX/shapepar/"/>
+    <id>http://www.catxue.top/2015/05/26/Fun-in-LaTeX/shapepar/</id>
     <published>2015-05-26T04:17:14.000Z</published>
     <updated>2018-10-19T16:27:46.000Z</updated>
     
@@ -149,17 +149,17 @@
     
     </summary>
     
-      <category term="计算机" scheme="http://www.catxue.cn/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <category term="计算机" scheme="http://www.catxue.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
     
     
-      <category term="LaTeX" scheme="http://www.catxue.cn/tags/LaTeX/"/>
+      <category term="LaTeX" scheme="http://www.catxue.top/tags/LaTeX/"/>
     
   </entry>
   
   <entry>
     <title>如何建立自己的博客</title>
-    <link href="http://www.catxue.cn/2015/04/22/Daily-Life/How-to-build-a-blog/"/>
-    <id>http://www.catxue.cn/2015/04/22/Daily-Life/How-to-build-a-blog/</id>
+    <link href="http://www.catxue.top/2015/04/22/Daily-Life/How-to-build-a-blog/"/>
+    <id>http://www.catxue.top/2015/04/22/Daily-Life/How-to-build-a-blog/</id>
     <published>2015-04-22T06:17:14.000Z</published>
     <updated>2018-10-19T16:39:27.000Z</updated>
     
@@ -171,17 +171,17 @@
     
     </summary>
     
-      <category term="生活随笔" scheme="http://www.catxue.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+      <category term="生活随笔" scheme="http://www.catxue.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="生活随笔" scheme="http://www.catxue.cn/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+      <category term="生活随笔" scheme="http://www.catxue.top/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
   <entry>
     <title>Aurora插件在word中的应用</title>
-    <link href="http://www.catxue.cn/2015/04/12/MISC/Aurora/"/>
-    <id>http://www.catxue.cn/2015/04/12/MISC/Aurora/</id>
+    <link href="http://www.catxue.top/2015/04/12/MISC/Aurora/"/>
+    <id>http://www.catxue.top/2015/04/12/MISC/Aurora/</id>
     <published>2015-04-12T07:17:14.000Z</published>
     <updated>2018-10-19T16:31:34.000Z</updated>
     
@@ -193,17 +193,17 @@
     
     </summary>
     
-      <category term="数学" scheme="http://www.catxue.cn/categories/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://www.catxue.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-      <category term="Aurora" scheme="http://www.catxue.cn/tags/Aurora/"/>
+      <category term="Aurora" scheme="http://www.catxue.top/tags/Aurora/"/>
     
   </entry>
   
   <entry>
     <title>核分析技术</title>
-    <link href="http://www.catxue.cn/2015/03/30/Nuclear/Nuclear-Analysis/"/>
-    <id>http://www.catxue.cn/2015/03/30/Nuclear/Nuclear-Analysis/</id>
+    <link href="http://www.catxue.top/2015/03/30/Nuclear/Nuclear-Analysis/"/>
+    <id>http://www.catxue.top/2015/03/30/Nuclear/Nuclear-Analysis/</id>
     <published>2015-03-30T05:07:14.000Z</published>
     <updated>2018-10-19T16:38:12.000Z</updated>
     
@@ -215,17 +215,17 @@
     
     </summary>
     
-      <category term="核技术" scheme="http://www.catxue.cn/categories/%E6%A0%B8%E6%8A%80%E6%9C%AF/"/>
+      <category term="核技术" scheme="http://www.catxue.top/categories/%E6%A0%B8%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="核分析" scheme="http://www.catxue.cn/tags/%E6%A0%B8%E5%88%86%E6%9E%90/"/>
+      <category term="核分析" scheme="http://www.catxue.top/tags/%E6%A0%B8%E5%88%86%E6%9E%90/"/>
     
   </entry>
   
   <entry>
     <title>MathJax插件在hexo中的应用</title>
-    <link href="http://www.catxue.cn/2015/03/20/MISC/MathJax/"/>
-    <id>http://www.catxue.cn/2015/03/20/MISC/MathJax/</id>
+    <link href="http://www.catxue.top/2015/03/20/MISC/MathJax/"/>
+    <id>http://www.catxue.top/2015/03/20/MISC/MathJax/</id>
     <published>2015-03-20T05:17:14.000Z</published>
     <updated>2019-09-28T13:06:49.000Z</updated>
     
@@ -238,19 +238,19 @@
     
     </summary>
     
-      <category term="数学" scheme="http://www.catxue.cn/categories/%E6%95%B0%E5%AD%A6/"/>
+      <category term="数学" scheme="http://www.catxue.top/categories/%E6%95%B0%E5%AD%A6/"/>
     
     
-      <category term="MathJax" scheme="http://www.catxue.cn/tags/MathJax/"/>
+      <category term="MathJax" scheme="http://www.catxue.top/tags/MathJax/"/>
     
-      <category term="Hexo" scheme="http://www.catxue.cn/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.catxue.top/tags/Hexo/"/>
     
   </entry>
   
   <entry>
     <title>你好！薛老板的猫</title>
-    <link href="http://www.catxue.cn/2015/02/25/Daily-Life/Schrodinger&#39;s-Cat/"/>
-    <id>http://www.catxue.cn/2015/02/25/Daily-Life/Schrodinger&#39;s-Cat/</id>
+    <link href="http://www.catxue.top/2015/02/25/Daily-Life/Schrodinger&#39;s-Cat/"/>
+    <id>http://www.catxue.top/2015/02/25/Daily-Life/Schrodinger&#39;s-Cat/</id>
     <published>2015-02-25T04:07:11.000Z</published>
     <updated>2018-10-19T16:59:52.000Z</updated>
     
@@ -264,10 +264,10 @@
     
     </summary>
     
-      <category term="生活随笔" scheme="http://www.catxue.cn/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+      <category term="生活随笔" scheme="http://www.catxue.top/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
     
-      <category term="生活随笔" scheme="http://www.catxue.cn/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
+      <category term="生活随笔" scheme="http://www.catxue.top/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
